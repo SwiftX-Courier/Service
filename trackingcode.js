@@ -1,0 +1,391 @@
+
+
+const trackingData = {
+    "ZAF0050738911": {
+        trackingNumber: "ZAF0050738911",
+        name: "Khulisani Nemasssiwane",
+        country: "south africa",
+        city: " johannesburg,Gauteng province",
+        addres: "6006 Manepist lawley 1830",
+        shipmentstatus: "IN Transit",
+        shippingdate: "2026-7-07",
+        deliverytime: "2026-11-07 08:41:21 AM"
+    },
+    
+    "ZAF005073891111": {
+        trackingNumber: "ZAF005073891111",
+        name: "Hendry Adams",
+        country: "south africa",
+        city:"Gauteng province ",
+        addres: "6Skew Road Dunswarts,Anderbolt,Boksburg 1508",
+              shipmentstatus: "Arrived (Pending Clearance)",",
+        shippingdate: "2026-1-07",
+        deliverytime: "2026-6-07 08:41:21 AM"
+    },
+
+            "ZAF0050738911124": {
+        trackingNumber: "ZAF0050738911124",
+        name: "Balisoa",
+        country: "south africa",
+        city: "capetown",
+        addres: "somerset west sir lowrys pass",
+        shipmentstatus: "IN Transit",
+        shippingdate: "2026-27-04",
+        deliverytime: "2026-1-06 08:41:21 AM"
+    },
+
+        "ZAF0050738911123": {
+        trackingNumber: "ZAF0050738911123",
+        name: "Sifiso Masango",
+        country: "south africa",
+        city: "Mpumalanga, Secunda",
+        addres: "Kinross extension 21",
+        shipmentstatus: "IN Transit",
+        shippingdate: "2026-17-06",
+        deliverytime: "2026-20-06 08:41:21 AM"
+    },
+    
+     "ZAF005073891156": {
+        trackingNumber: "ZAF005073891156",
+        name: "Samkdlo Luhani",
+        country: "south africa",
+        city: "Westonaria",
+        addres: "1649 Mzamomhle Street 1779",
+        shipmentstatus: "IN Transit",
+        shippingdate: "2026-22-02",
+        deliverytime: "2026-5-25 08:41:21 AM"
+    },
+
+       "ZAF00507389116": {
+        trackingNumber: "ZAF00507389116",
+        name: "Christo Dean Van Der Merwe",
+        country: "south africa",
+        city: "Cape Town",
+        addres: "6 Birkenhead cressent, Ruyterwacht",
+        shipmentstatus: "IN Transit",
+        shippingdate: "2026-4-03",
+        deliverytime: "2026-14-03 08:41:21 AM"
+    },
+
+           "ZAF0050738954": {
+        trackingNumber: "ZAF0050738954",
+        name: "Siphokuhle Madinga ",
+        country: "south africa",
+        city: "Western cape",
+        addres: "western cape, cape town",
+        shipmentstatus: "Arrived(Pending Clearance)",
+        shippingdate: "2026-1-02",
+        deliverytime: "2026-5-02 08:41:21 AM"
+    },
+              "ZAF00507389545": {
+        trackingNumber: "ZAF00507389545",
+        name: "Sinoxolo",
+        country: "south africa",
+        city: "Eastern cape",
+        addres: "King williams Town 5600 12 Alice Street",
+        shipmentstatus: "IN Transit",
+        shippingdate: "2026-1-24",
+        deliverytime: "2026-1-26 08:41:21 AM"
+    },
+    };
+
+    const params = new URLSearchParams(window.location.search);
+
+    const trackingNumber = params.get("tracking");
+
+    const customer = trackingData[trackingNumber];
+
+    const detailsDiv = document.getElementById("details");
+
+    if (customer) {
+        detailsDiv.innerHTML = `
+
+
+        <div class="shipment-header">
+ <div>
+    <img src="location.png" alt="">
+    <p>${customer.shipmentstatus}</p>
+</div> 
+
+ <div>
+    Tracking Number: ${customer.trackingNumber}
+</div> 
+ <div>
+
+<a href ="shipment-receipt.html"> <button>
+    Print Shipment
+</button></a>
+</div> 
+ 
+</div>
+
+
+
+
+
+
+<div class="collection">
+        <div class="Recipient-box">
+            <p>
+                Sender/Orgin
+            </p>
+           
+        </div>
+        <div class="city-box">
+            <p class="city">
+                <img src="location.png" alt="">  City Collection
+            </p>
+         
+            <p>
+                united states
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+             <img src="location.png" alt="">   Orgin City
+            </p>
+            
+            <p>
+                Texas
+            </p>
+            <hr class="hr">
+        </div>
+        <br>
+        <div class="city-box">
+            <p class="city">
+             <img src="calendar.png" alt="">   Shipping Date
+            </p>
+            ${customer.shippingdate}
+            <p>
+                
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+              <img src="clock.png" alt="">  Shipping-Time
+            </p>
+           
+            <p>
+                1-3 days
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+               Shipping-Quantity
+            </p>
+            
+            <p>
+              1
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+             Total-weight {lbs}
+            </p>
+            
+            <p>
+              6
+            </p>
+            <hr class="hr">
+        </div>
+
+    </div>
+
+
+     <div style="margin-top: 80px;" class="collection">
+         <div style="width: 100%;"  class="Recipient-box"> 
+            <p  class="Recipient">
+              Shipping History
+            </p>
+        </div>
+<div>
+         <div class="city-box">
+            <p class="city">
+                
+            </p>
+         
+            <p>
+              Approved
+            </p>
+              
+            <div>
+                03:47:21 pm
+            </div>       
+        </div>
+        <hr>
+        <div class="city-box">
+            <p class="city">
+          
+            </p>
+            
+            <p>
+                ${customer.shipmentstatus}
+            </p>
+          
+            
+            <div>
+                12:12:45 pm
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div  class="city-box">
+            <p class="city">
+
+            </p>
+            
+            <p>
+               ${customer.shipmentstatus}
+            </p>
+          
+            <div>
+                01:01:24 pm
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+ <div id="details" style="margin-top: 80px;" class="collection">
+        <div class="Recipient-box">
+            <p class="Recipient">
+                Recipient/destination
+            </p>
+        </div>
+
+        <div class="city-box">
+            <p class="city">
+                <img src="location.png" alt=""> Delivery City 
+            </p>
+            <p>
+                ${customer.city}
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+             <img src="location.png" alt="">  Destination City
+            </p>
+            
+            <p>
+               ${customer.city}
+            </p>
+            <hr class="hr">
+        </div>
+        <br>
+        <div class="city-box">
+            <p class="city">
+             <img src="calendar.png" alt="">  Delivery time
+            </p>
+            
+            <p>
+                ${customer.deliverytime}
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+              <img src="clock.png" alt="">  Shipping-Time
+            </p>
+            
+            <p>
+                1-3 days
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+               Contact Name
+            </p>
+            
+            <p>
+             ${customer.name}
+            </p>
+            <hr class="hr">
+        </div>
+        <div class="city-box">
+            <p class="city">
+           Address
+            </p>
+            
+            <p>
+              ${customer.addres}
+            </p>
+            <hr class="hr">
+        </div>
+        `
+    } else {
+        detailsDiv.innerHTML = `
+        <p 
+        style="color:red;">Invalid or Missing tracking number.</p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+        
+       
+        
+
+       
+        `
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
